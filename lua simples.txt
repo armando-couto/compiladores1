@@ -1,0 +1,65 @@
+//usei essa ferramenta nesse site: http://smlweb.cpsc.ucalgary.ca/start.html
+
+Inicio -> function main ap fp doispt Chunk end.
+Chunk -> Stat Chunk | .
+Block -> Chunk.
+Stat -> while Exp do Block end | repeat Block until Exp | if Exp then Block Stat' G' end | Varlist igual Explist | 
+print ap name fp | write ap name fp .
+G' -> else Block | .
+Stat' -> elseif Exp then Block Stat' | .
+Varlist -> Var VL.
+VL -> virg Var VL | .
+Var -> name.
+Explist -> Exp Explist'.
+Explist' -> virg Exp Explist' | .
+Exp -> false | true | EqNum.
+Prefix_exp -> ap EqNum fp.
+EqNum -> num EqNum' | Prefix_exp EqNum' | name EqNum'.
+EqNum' -> Binop FBinop | .
+FBinop -> num EqNum' | Prefix_exp EqNum' | name EqNum'.
+Binop -> mais | menos | mul | div | sm | smi | sn | sni | igualdade | and | or | dif.
+
+//Observações:
+Pq de 'FBinop', pois tava dando conflito para produzir o first do EqNum' 
+(antes era: EqNum' -> Binop num EqNum | Binop Prefix_exp EqNum'.), então tive que criar essa produção...
+
+# First dos ñ terminais
+
+-first(Inicio) = {function}
+-first(Chunk) = {while repeat if print scanner name e}
+-first(Stat) = {while repeat if print scanner name}
+-first(G') = {else, e}
+-first(Block) = {while repeat if print scanner name e}
+-first(Stat') = {elseif, e}
+-first(Varlist) = {name}
+-first(VL) = {virg, e}
+-first(Var) = {name}
+-first(Explist) = {false true num name ap}
+-first(Explist') = {virg, e}
+-first(Exp) = {false true num name ap}
+-first(EqNum) = {num name ap}
+-first(FBinop) = {num name ap}
+-first(Prefix_exp) = {ap}
+-first(EqNum') = {mais menos mul div sm smi sn sni igualdade and or dif e}
+-first(Binop) = {mais menos mul div sm smi sn sni igualdade and or dif}
+
+
+# Follows dos ñ terminais
+
+-follow(Inicio) = {$}
+-follow(Chunk) = {until else elseif end}
+-follow(Stat) = {until else elseif while repeat if print scanner name end}
+-follow(G') = {end}
+-follow(Block) = {until else end elseif}
+-follow(Stat') = {else end}
+-follow(Varlist) = {igual}
+-follow(VL) = {igual}
+-follow(Var) = {virg igual}
+-follow(Explist) = {until else elseif while repeat if print scanner name end}
+-follow(Explist') = {until else elseif while repeat if print scanner name end}
+-follow(Exp) = {until else elseif do then virg while repeat if print scanner name end}
+-follow(EqNum) = {fp until else elseif do then virg while repeat if print scanner name end}
+-follow(FBinop) = {fp until else elseif do then virg while repeat if print scanner name end}
+-follow(Prefix_exp) = {mais menos mul div sm smi sn sni igualdade and or dif fp until else elseif do then virg while repeat if print scanner name end}
+-follow(EqNum') = {fp until else elseif do then virg while repeat if print scanner name end}
+-follow(Binop) = {num name ap}
