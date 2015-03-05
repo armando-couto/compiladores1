@@ -1,6 +1,5 @@
-/**
- *
- */
+package laboratorio;
+
 public class Laboratorio2 {
 
     public static void main(String[] args) {
@@ -26,7 +25,7 @@ public class Laboratorio2 {
                     } else if (Character.isDigit(caractere)) {
                         estado = 4;
                     } else {
-                        throw new RuntimeException("A cadeia n�o est� bem formada");
+                        throw new RuntimeException("A cadeia não está bem formada");
                     }
                     break;
                 case 1:
@@ -39,7 +38,7 @@ public class Laboratorio2 {
                     } else if (Character.isDigit(caractere)) {
                         estado = 4;
                     } else {
-                        throw new RuntimeException("A cadeia n�o est� bem formada");
+                        throw new RuntimeException("A cadeia não está bem formada");
                     }
                     break;
                 case 2:
@@ -48,7 +47,7 @@ public class Laboratorio2 {
                     } else if (Character.isDigit(caractere)) {
                         estado = 4;
                     } else {
-                        throw new RuntimeException("A cadeia n�o est� bem formada");
+                        throw new RuntimeException("A cadeia não está bem formada");
                     }
                     break;
                 case 3:
@@ -57,7 +56,7 @@ public class Laboratorio2 {
                     } else if (caractere == 'E') {
                         estado = 7;
                     } else {
-                        throw new RuntimeException("A cadeia n�o est� bem formada");
+                        throw new RuntimeException("A cadeia não está bem formada");
                     }
                     break;
                 case 4:
@@ -68,7 +67,7 @@ public class Laboratorio2 {
                     } else if (caractere == '.') {
                         estado = 10;
                     } else {
-                        throw new RuntimeException("A cadeia n�o est� bem formada");
+                        throw new RuntimeException("A cadeia não está bem formada");
                     }
                     break;
                 case 5:
@@ -83,49 +82,49 @@ public class Laboratorio2 {
                     } else if (Character.isDigit(caractere)) {
                         estado = 4;
                     } else {
-                        throw new RuntimeException("A cadeia n�o est� bem formada");
+                        throw new RuntimeException("A cadeia não está bem formada");
                     }
                     break;
                 case 6:
                     if (Character.isDigit(caractere) || caractere == 'A' || caractere == 'B' || caractere == 'C' || caractere == 'D' || caractere == 'E' || caractere == 'F') {
                         estado = 13;
                     } else {
-                        throw new RuntimeException("A cadeia n�o est� bem formada");
+                        throw new RuntimeException("A cadeia não está bem formada");
                     }
                     break;
                 case 7:
                     if (caractere == '+' || caractere == '-') {
                         estado = 8;
                     } else {
-                        throw new RuntimeException("A cadeia n�o est� bem formada");
+                        throw new RuntimeException("A cadeia não está bem formada");
                     }
                     break;
                 case 8:
                     if (Character.isDigit(caractere)) {
                         estado = 9;
                     } else {
-                        throw new RuntimeException("A cadeia n�o est� bem formada");
+                        throw new RuntimeException("A cadeia não está bem formada");
                     }
                     break;
                 case 9:
                     if (Character.isDigit(caractere)) {
                         estado = 9;
                     } else {
-                        throw new RuntimeException("A cadeia n�o est� bem formada");
+                        throw new RuntimeException("A cadeia não está bem formada");
                     }
                     break;
                 case 10:
                     if (Character.isDigit(caractere)) {
                         estado = 3;
                     } else {
-                        throw new RuntimeException("A cadeia n�o est� bem formada");
+                        throw new RuntimeException("A cadeia não está bem formada");
                     }
                     break;
                 case 11:
                     if (Character.isDigit(caractere)) {
                         estado = 3;
                     } else {
-                        throw new RuntimeException("A cadeia n�o est� bem formada");
+                        throw new RuntimeException("A cadeia não está bem formada");
                     }
                     break;
                 case 12:
@@ -136,31 +135,31 @@ public class Laboratorio2 {
                     } else if (caractere == '.') {
                         estado = 10;
                     } else {
-                        throw new RuntimeException("A cadeia n�o est� bem formada");
+                        throw new RuntimeException("A cadeia não está bem formada");
                     }
                     break;
                 case 13:
                     if (Character.isDigit(caractere) || caractere == 'A' || caractere == 'B' || caractere == 'C' || caractere == 'D' || caractere == 'E' || caractere == 'F') {
                         estado = 13;
                     } else {
-                        throw new RuntimeException("A cadeia n�o est� bem formada");
+                        throw new RuntimeException("A cadeia não está bem formada");
                     }
                     break;
             }
         }
 
         if (estado == 1) {
-            System.out.println("Cadeia bem formada - n�mero bin�rio");
+            System.out.println("Cadeia bem formada - número binário");
         } else if (estado == 3 || estado == 9) {
-            System.out.println("Cadeia bem formada - n�mero ponto flutuante");
+            System.out.println("Cadeia bem formada - número ponto flutuante");
         } else if (estado == 4) {
-            System.out.println("Cadeia bem formada - n�mero inteiro");
+            System.out.println("Cadeia bem formada - número inteiro");
         } else if (estado == 13) {
-            System.out.println("Cadeia bem formada - n�mero hexadecimal");
+            System.out.println("Cadeia bem formada - número hexadecimal");
         } else if (estado == 12) {
-            System.out.println("Cadeia bem formada - n�mero octal");
+            System.out.println("Cadeia bem formada - número octal");
         } else {
-            System.out.println("A cadeia n�o est� bem formada");
+            System.out.println("A cadeia não está bem formada");
         }
     }
 
