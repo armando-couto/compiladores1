@@ -4,7 +4,7 @@ public class Laboratorio2 {
 
     public static void main(String[] args) {
 
-        String cadeia = "0x0ABC";
+        String cadeia = "2E+3";
         Integer estado = 0;
 
         for (int i = 0; i < cadeia.length(); i++) {

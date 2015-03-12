@@ -1,0 +1,18 @@
+G = (E, P, N, S)
+S = { <javascript> }
+N = { <javascript>, <variable_declaration>, <comand>, <type>, <comand_while>, <comand_if>, <comand_read>, <comand_output>, <expression>, <identifier>, <letter>, <digit> }
+E = { a..z, A..Z, 0..9, {, }, (, ), +, =, -, *, /, class, Boolean, Number, String, while, if, Console.read , Concole.log }
+p = {
+	<javascript>			::=	 class <variable_declaration> { <comand> }
+	<variable_declaration>	::=	<type> <identifier>
+	<comand>				::=	<comand_while> | <comand_if> | <comand_read> | <comand_output>
+	<type>					::=	Boolean | Number  | String
+	<comand_while>			::=	while ( <expression> ) <identifier> { <comand> }
+	<comand_if>				::=	if ( <expression> ) <identifier> { <comand> } 
+	<comand_read>			::=	Console.read <identifier>
+	<comand_output>			::=	Concole.log ( <expression> )
+	<expression>			::=	<identifier> ("+" | "-" | "*" | "/") <identifier>
+	<identifier>			::=	<identifier> <digit> | <identifier> <letter> | <letter> 
+	<letter>				::=	a..Z | A..Z
+	<digit>					::= 0..9 
+}

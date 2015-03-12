@@ -5,7 +5,7 @@ public class Laboratorio1 {
     public static void main(String[] args) {
 
 //        String cadeia = "DFD@";
-        String cadeia = "@";
+        String cadeia = "L1@";
         Integer estado = 1;
 
         for (int i = 0; i < cadeia.length(); i++) {
