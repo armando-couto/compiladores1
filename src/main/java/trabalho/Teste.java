@@ -7,9 +7,9 @@ public class Teste {
 
 	public static void gramatica(String lista) {
 
-		String palavraReservada[] = { "public", "class", "boolean", "int",
-				"string", "while", "if", "scanner", "print" };
-
+		String palavraReservada[] = { "public class", "int", "float", "double", "string", "next();", "switch", 
+				"case", "break", "=", "Sysint", "Sysout" };
+		
 		String simbolo[] = { "{", "}", "(", ")" };
 
 		String operador[] = { "+", "-", "*", "/" };
