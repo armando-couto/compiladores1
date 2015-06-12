@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <script data-require="angular.js@1.2.x" src="https://code.angularjs.org/1.2.28/angular.js" data-semver="1.2.28"></script>
+    <script src="generate.js"></script>
+    <script src="anaLexico.js"></script>
+  </head>
+
+  <body ng-controller="generateCtrl">
+    <h1>Trabalho de Compiladores - 3 - Gerador</h1>
+    
+    <textarea rows="6" cols="50" ng-model="input"></textarea>
+    <button ng-click="change()">OK</button>
+    <hr>
+    <strong>Resultado:</strong><br> {{ result }} 
+  </body>
+</html>
